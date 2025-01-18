@@ -1,0 +1,54 @@
+{
+    "motivation" : [
+        {
+            "author" : "Albert Einstein",
+            "text" : "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world.",
+            "lang" : "EN"
+        },
+        {
+            "author" : "B.J. Habibie",
+            "text" : "Ketika seseorang menghina kamu, itu adalah cara dia mengingatkan bahwa kamu jauh lebih baik darinya.",
+            "lang" : "ID"
+        },
+        {
+            "author" : "Confucius",
+            "text" : "It does not matter how slowly you go as long as you do not stop.",
+            "lang" : "EN"
+        },
+        {
+            "author" : "Helen Keller",
+            "text" : "The only thing worse than being blind is having sight but no vision.",
+            "lang" : "EN"
+        },
+        {
+            "author" : "R.A. Kartini",
+            "text" : "Jangan pernah menyerah jika kamu masih ingin mencoba. Jangan biarkan penyesalan datang karena kamu selangkah lagi untuk menang.",
+            "lang" : "ID"
+        },
+        {
+            "author" : "Steve Jobs",
+            "text" : "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.",
+            "lang" : "EN"
+        },
+        {
+            "author" : "Mahatma Gandhi",
+            "text" : "The best way to find yourself is to lose yourself in the service of others.",
+            "lang" : "EN"
+        },
+        {
+            "author" : "Tung Desem Waringin",
+            "text" : "Kesuksesan itu tidak diraih dengan kerja keras semata, tapi dengan kerja cerdas yang penuh perencanaan.",
+            "lang" : "ID"
+        },
+        {
+            "author" : "Nelson Mandela",
+            "text" : "It always seems impossible until it’s done.",
+            "lang" : "EN"
+        },
+        {
+            "author" : "Walt Disney",
+            "text" : "The way to get started is to quit talking and begin doing.",
+            "lang" : "EN"
+        }
+    ]
+}

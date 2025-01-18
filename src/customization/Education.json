@@ -1,0 +1,8 @@
+{
+    "schools" : [{
+        "logo" : "./img/smapul.png",
+        "name" : "Vocational High School of SUMATRA 40 Bandung",
+        "degree" : "Software Engineer",
+        "time" : "2017 - 2020"
+    }]
+}

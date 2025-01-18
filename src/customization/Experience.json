@@ -1,0 +1,76 @@
+{
+  "companies": [
+    {
+      "status": "Worked",
+      "logo": "./img/v-tax.png",
+      "name": "PT. MUTIARA BINTANG ABADI",
+      "position_time": "[Technical Support/Helpdesk Support], since : [Feb 2022 - now]",
+      "description": [
+        {
+          "task": "* Handling customer complaints",
+          "details": "- Managing over 15+ customer complaints daily with a 90% increase in customer satisfaction."
+        },
+        {
+          "task": "* Resolving technical issues",
+          "details": "- Resolving 90% of technical issues within 8 hours, with a 80% decrease in recurring complaints."
+        },
+        {
+          "task": "* Collecting customer feedback",
+          "details": "- Collected Customer feedback to fix or improve the application and currently 80% of it is implemented well."
+        },
+        {
+          "task": "* Installing Application - base (LAMPP stack)",
+          "details": "- Installed over 20 web-based applications with enhanced security through SSL implementation and the use of a reverse proxy."
+        },
+        {
+          "task": "* Configuring SPPT (Notice of Tax Due)",
+          "details": "- Configured SPPT (Notice of Tax Due) printing on a Printonix v Pxxxx printer and speeding time of 40%"
+        },
+        {
+          "task": "* Providing support through various channels",
+          "details": "- providing support with WhatsApp groups and email as tools for providing support."
+        },
+        {
+          "task": "* Migrating Application server to server on production",
+          "details": "- Migrated more than 10+ applications with a process completion time of less than 2x24 hours."
+        },
+        {
+          "task": "* Created complex SQL queries to help the front-end view as per the client's requirements.",
+          "details": "- Developed and optimized complex SQL queries to assist the front-end team in generating data views tailored to the client's specific requirements, ensuring accuracy and efficiency in data retrieval and presentation."
+        },
+        {
+          "task": "* Reporting, documenting and testing ",
+         "details": "- Documented an average of 49 issues and fixes per month, including bug fixes and enhancements, with a 95% success rate in testing results."
+        },
+        {
+          "task": "* Helpdesk Support",
+          "details": "- Provided comprehensive helpdesk support by utilizing Redmine to effectively track, manage, and resolve an average of 160 issue tickets per month in 2024. Ensured timely resolution of technical issues and maintained high levels of customer satisfaction through consistent follow-up and clear communication."
+        }
+      ]
+    },
+    {
+      "status": "Internship",
+      "logo": "./img/ptun.png",
+      "name": "THE STATE ADMINISTRATIVE COURT",
+      "position_time": "File Officer Intern, Jun. 2019 - Sept. 2019",
+      "description": [
+        {
+          "task": "- File Officer",
+          "details": "search for needed files, organize files and clean up file space"
+        }
+      ]
+    },
+    {
+      "status": "Internship",
+      "logo": "./img/ptpos.png",
+      "name": "PT. POS INDONESIA REG V BANDUNG",
+      "position_time": "Intern, Jun. 2018 - Sept. 2018",
+      "description": [
+        {
+          "task": "- Helper warehouse staff",
+          "details": "packing goods to be sent to other post offices."
+        }
+      ]
+    }
+  ]
+}

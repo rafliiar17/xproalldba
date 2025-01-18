@@ -1,0 +1,121 @@
+/* Wrapper style - centers the content in the viewport */
+.wrapper-first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0); /* Light background for a modern, clean feel */
+    padding: 20px; /* Adds padding for a clean layout */
+}
+
+/* Container style - centers its content and provides layout and styling */
+.container-first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px; /* More compact layout */
+    background-color: #ffffff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    border-radius: 15px; /* Rounded corners for a smoother design */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Greeting and text style */
+.greeting-text {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.welcome-text {
+    font-size: 22px;
+    font-weight: 400;
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.prompt-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input field style */
+.input-first {
+    padding: 14px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    width: 100%;
+    max-width: 350px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus style for input */
+.input-first:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+/* Button style */
+.button-first {
+    padding: 14px 25px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 350px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+.button-first:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Loader (spinning circle) style */
+.loader-first {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+    margin: 20px 0;
+}
+
+/* Keyframes for spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Container for the greeting icon */
+.greeting-icon {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Additional styling for the icon */
+.greeting-icon svg {
+    transition: transform 0.3s ease;
+}
+
+/* You can add more styling here as needed */
