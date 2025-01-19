@@ -16,10 +16,10 @@ function IntroContent({ index }) {
     return (
         <div id='app'>
             <ASCII />
-            <Path path={paths[index - 1]} />
+            <Path path={paths[0]} />
             <Code command='About Me' />
             <Intro />
-            <Path path={paths[index +5]} />
+            <Path path={paths[6]} />
             <Code command='Contact Information' />
             <Contact />
         </div>
@@ -30,23 +30,24 @@ function EduContent({ index }) {
     return (
         <div id='app'>
             <ASCII />
-                <Path path={paths[index -5]} />
-                <Code command='Education' />
-                <Edu />
-            <Path path={paths[index -0]} />
+            <Path path={paths[1]} />
+            <Code command='Education' />
+            <Edu />
+            <Path path={paths[6]} />
             <Code command='Contact Information' />
             <Contact />
         </div>
     );
 }
+
 function ExpContent({ index }) {
     return (
         <div id='app'>
             <ASCII />
-            <Path path={paths[index ]} />
+            <Path path={paths[2]} />
             <Code command='Work and Internship' />
             <Exp />
-            <Path path={paths[index +4]} />
+            <Path path={paths[6]} />
             <Code command='Contact Information' />
             <Contact />
         </div>
@@ -57,10 +58,10 @@ function SklContent({ index }) {
     return (
         <div id='app'>
             <ASCII />
-            <Path path={paths[index]} />
+            <Path path={paths[3]} />
             <Code command='Skills' />
             <Skl />
-            <Path path={paths[index +3]} />
+            <Path path={paths[6]} />
             <Code command='Contact Information' />
             <Contact />
         </div>
@@ -71,10 +72,10 @@ function ProContent({ index }) {
     return (
         <div id='app'>
             <ASCII />
-            <Path path={paths[index]} />
+            <Path path={paths[4]} />
             <Code command='Project' />
             <Pro />
-            <Path path={paths[index +2]} />
+            <Path path={paths[6]} />
             <Code command='Contact Information' />
             <Contact />
         </div>
@@ -85,46 +86,36 @@ function PubContent({ index }) {
     return (
         <div id='app'>
             <ASCII />
-            <Path path={paths[index - 0]} />
+            <Path path={paths[5]} />
             <Code command='Certificate Owned List' />
             <Pub />
-            <Path path={paths[index +1]} />
+            <Path path={paths[6]} />
             <Code command='Contact Information' />
             <Contact />
         </div>
     );
 }
 
-
-
-
-
 function App(props) {
-    // eslint-disable-next-line eqeqeq
-    if (props.index == 1) {
-        return <IntroContent index={props.index} />;
-    }
-    // eslint-disable-next-line eqeqeq
-    else if (props.index == 2) {
-        return <ExpContent index={props.index} />;
-    }
-    // eslint-disable-next-line eqeqeq
-    else if (props.index == 3) {
-        return <SklContent index={props.index} />;
-    }
-    // eslint-disable-next-line eqeqeq
-    else if (props.index == 4) {
-        return <ProContent index={props.index} />;
-    }
-    // eslint-disable-next-line eqeqeq
-    else if (props.index == 5) {
-        return <PubContent index={props.index} />;
-    }
-    // TODO : Project
-    // eslint-disable-next-line eqeqeq
-    else if (props.index == 6) {
-        return <EduContent index={props.index} />;
-    }
+    return (
+        <>
+
+            {
+                // eslint-disable-next-line eqeqeq
+                props.index == 1 ? <IntroContent index={props.index} /> :
+                // eslint-disable-next-line eqeqeq
+                props.index == 2 ? <EduContent index={props.index} /> :
+                // eslint-disable-next-line eqeqeq
+                props.index == 3 ? <ExpContent index={props.index} /> :
+                // eslint-disable-next-line eqeqeq
+                props.index == 4 ? <SklContent index={props.index} /> :
+                // eslint-disable-next-line eqeqeq
+                props.index == 5 ? <ProContent index={props.index} /> :
+                // eslint-disable-next-line eqeqeq
+                props.index == 6 ? <PubContent index={props.index} /> : null
+            }
+        </>
+    );
 }
 
 export default App;

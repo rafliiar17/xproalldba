@@ -1,0 +1,19 @@
+/* Fade with shadow blur */
+.fade-shadow-enter {
+    opacity: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.fade-shadow-enter-active {
+    opacity: 1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: opacity 400ms ease, box-shadow 400ms ease;
+}
+.fade-shadow-exit {
+    opacity: 1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.fade-shadow-exit-active {
+    opacity: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 400ms ease, box-shadow 400ms ease;
+}

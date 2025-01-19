@@ -5,7 +5,7 @@ import './styles/fa-all.css';
 import LoadingPage from './first';
 import Container from './container';
 import reportWebVitals from './reportWebVitals';
-
+import Music from "./music"
 
 const App = () => {
   const [isFirstAccess, setIsFirstAccess] = useState(true);
@@ -21,6 +21,7 @@ const App = () => {
         <LoadingPage onSubmit={handleFirstAccessSubmit} />
       ) : (
         <Container />
+        
       )}
     </>
   );
@@ -30,6 +31,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <Music />
   </React.StrictMode>
 );
 

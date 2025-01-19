@@ -7,10 +7,14 @@ export function Path(props) {
     return (
         <p className="path">
             <span>
-                <i className="fa-solid fa-terminal" style={{ color: "#000000" }}>&nbsp;</i>
+            &nbsp;  <i className="fa-solid fa-computer" style={{ 
+                color: "#000"
+
+            }}>&nbsp;</i>
             </span>
+            
             <span>
-                <i className="fa fa-folder-tree" style={{ color: "#FFD43B" }}>&nbsp;</i>
+                <i className="fa fa-folder-open" style={{ color: "#FFD43B" }}>&nbsp;</i>
                 {props.path}
             </span>
         </p>
@@ -20,7 +24,7 @@ export function Path(props) {
 export function ASCII() {
     const [dateTime, setDateTime] = useState('');
     const [weather, setWeather] = useState('');
-    const [visitorName, setVisitorName] = useState("Guest");
+    const [visitorName, setVisitorName] = useState("");
     const [greeting, setGreeting] = useState('Hello');
 
     const fetchVisitorName = useCallback(async (id) => {
@@ -32,11 +36,11 @@ export function ASCII() {
                 const userData = querySnapshot.docs[0].data();
                 setVisitorName(userData.name);
             } else {
-                setVisitorName("Guest");
+                setVisitorName("");
             }
         } catch (error) {
             console.error("Error fetching visitor name: ", error);
-            setVisitorName("Guest");
+            setVisitorName("");
         }
     }, []);
 
@@ -58,7 +62,7 @@ export function ASCII() {
         await fetchVisitorName(visitorId);
     }, [fetchVisitorName]);
 
-    const showDateTime = () => {
+    const showDateTime = useCallback(() => {
         const now = new Date();
         const day = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(now);
         const date = now.getDate().toString().padStart(2, '0');
@@ -70,9 +74,9 @@ export function ASCII() {
 
         const formattedDateTime = `${day}, ${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
         setDateTime(formattedDateTime);
-    };
+    }, []);
 
-    const determineGreeting = () => {
+    const determineGreeting = useCallback(() => {
         const now = new Date();
         const hour = now.getHours();
 
@@ -83,9 +87,9 @@ export function ASCII() {
         } else {
             setGreeting("Good Evening");
         }
-    };
+    }, []);
 
-    const fetchWeather = async () => {
+    const fetchWeather = useCallback(async () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(async (position) => {
                 const lat = position.coords.latitude;
@@ -127,10 +131,15 @@ export function ASCII() {
         } else {
             setWeather('Geolocation is not supported by this browser');
         }
-    };
+    }, []);
 
+    // First useEffect for visitor initialization
     useEffect(() => {
         initializeAndFetchVisitor();
+    }, [initializeAndFetchVisitor]);
+
+    // Second useEffect for intervals
+    useEffect(() => {
         showDateTime();
         determineGreeting();
         fetchWeather();
@@ -142,7 +151,7 @@ export function ASCII() {
             clearInterval(timeIntervalId);
             clearInterval(weatherIntervalId);
         };
-    }, [initializeAndFetchVisitor]);
+    }, [showDateTime, determineGreeting, fetchWeather]);
 
     return (
         <div className="ascii-container">
@@ -170,17 +179,21 @@ export function Code(props) {
 
 export function Contact() {
     return (
-        <div className="contact">
-            <p>
-                <a href={`mailto:${Contactraw.email}`} target="_blank" rel="noreferrer">
-                    <i className="fa-solid fa-envelope"></i> Email: [{Contactraw.email}]
-                </a>
-            </p>
-            <p>
-                <a href={`https://wa.me/${Contactraw.phone}`} target="_blank" rel="noreferrer">
-                    <i className="fa-brands fa-whatsapp"></i> WhatsApp: [{Contactraw.phone}]
-                </a>
-            </p>
+        <div className="contact-footer">
+            <div className="contact-content">
+                <div className="contact-info">
+                    <p>
+                        <a href={`mailto:${Contactraw.email}`} target="_blank" rel="noreferrer" className="contact-link">
+                            <i className="fa-solid fa-envelope"></i> Email: <span>{Contactraw.email}</span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href={`https://wa.me/${Contactraw.phone}`} target="_blank" rel="noreferrer" className="contact-link">
+                            <i className="fa-brands fa-whatsapp"></i> WhatsApp: <span>{Contactraw.phone}</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }

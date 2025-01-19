@@ -37,36 +37,37 @@ a {
   text-decoration: none;
   color: rgb(238, 238, 238);
 }
-
 body {
   background-image: url('../img/background.jpg');
-  /* Full height */
   height: 100%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
   font-family: 'Fira Code', monospace;
-  display:flex;
+  
+  display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* Prevents scrollbars */
 }
-  
+
 .container {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  width:100%;
-  max-width:1100px;
-  height: 1060px; /* for large screen */
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  max-height: 1000px;
   overflow: hidden;
   border-radius: 6px;
   border: 1px solid rgb(12, 12, 12);
-  margin:20px;
+  margin-top: -20px;
+  margin-bottom: 50px;
   cursor: text;
-
+  transform: scale(0.9); /* This zooms out the container */
+  transform-origin: center center; /* Optional: Keeps the scaling centered */
 }
+
 
 /* for normal screen */
 @media print, screen and (max-width: 2000px) {
@@ -173,7 +174,7 @@ div.title {
   
 /* Add a background color on mouse-over */
 .nav button:hover {
-	background-color: #bdbdbd;
+	background-color: #FABD2F;
 }
   
 /* Style the current/active link */
@@ -400,6 +401,13 @@ div.bottom-8 {
 .path  span{
   background-color: #c7c7c7;
 	font-size: 16px;
+  padding-right: 10px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  /* border-right: 1px solid #FABD2F; */
+  border-top: 1px solid #FABD2F;
+  border-bottom: 1px solid #FABD2F;
+  border-left: 1px solid #FABD2F;
 }
 
 .fa-apple {
@@ -408,13 +416,18 @@ div.bottom-8 {
 
 .path  span+span {
   color:#ebf3f4;
-  background-color: #55a6f6;
+  background-color: #3d3d3d;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+  padding-left: 10px;
+  border-right: 1px solid #FABD2F;
+  border-top: 1px solid #FABD2F;
+  border-bottom: 1px solid #FABD2F;
+  border-left: 1px solid #FABD2F;
 }
 
 .fa-folder-open {
-	color: #ebf3f4;
+	color: #00e1ff;
 } 
 
 #code {
@@ -663,6 +676,7 @@ div.output a, i {
 
   .contact  p{
     font-size: 9px;
+
   }
 
   .probox {
@@ -759,14 +773,15 @@ div.output a, i {
   font-size: 1rem; /* Ukuran font */
   display: flex;
   align-items: center;
-  gap: 10px; /* Jarak antara ikon dan teks */
+  gap: 1px; /* Jarak antara ikon dan teks */
 }
 
 .site-name i {
-  animation: spin 5s linear infinite; /* Animasi rotasi */
-  color: #0985d7;
-  font-size: 1.1rem; /* Mengubah ukuran ikon */
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+  border: 1px;
 }
+
 
 
 /* Definisi animasi rotasi */
@@ -814,38 +829,47 @@ div.output a, i {
 
 
 .edu .status-company {
-  position: relative; /* Ensures the pseudo-element is positioned relative to this element */
-  padding: 3px; /* Padding inside the box */
-  border: 2px solid transparent; /* Transparent border for layout */
-  border-radius: 10px; /* Rounded corners */
-  background-color: #333; /* Background color for the box */
-  color: #fff; /* Text color */
-  overflow: hidden; /* Prevents overflow of shadow */
-  width: 200px;
+  position: relative;
+  padding: 10px 15px; /* Adjusted padding for a balanced look */
+  border: 2px solid #FABD2F;
+  border-radius: 12px; /* Slightly rounded corners for a professional touch */
+  background-color: #1a1a1a; /* Darker background for contrast */
+  color: #f9f9f9; /* Softer text color for readability */
+  overflow: hidden;
+  width: 220px; /* Adjusted width for balance */
   text-align: center;
-  border-color: wheat;
-  
+  font-family: 'Arial', sans-serif; /* Clean, professional font */
+  font-size: 16px; /* Readable font size */
+  font-weight: 500; /* Semi-bold for better emphasis */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+.edu .status-company:hover {
+  transform: translateY(-5px); /* Subtle lift effect on hover */
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3); /* Gentle shadow for depth */
 }
 
 /* Glowing border effect */
 .edu .status-company::before {
   content: '';
   position: absolute;
-  top: -50px; /* Extend the glow outward */
-  left: -50px; /* Extend the glow outward */
-  right: -50px; /* Extend the glow outward */
-  bottom: -50px; /* Extend the glow outward */
-  border: 5px solid rgba(0, 255, 255, 0.3); /* Glowing border color and opacity */
-  border-radius: 10px; /* Matches the box's border-radius */
-  z-index: -1; /* Place the glow behind the element */
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8); /* Glow effect */
-  transition: box-shadow 0.3s ease; /* Smooth transition for glow effect */
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 3px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  z-index: -1;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Subtle glow effect */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Optional: Change glow on hover */
+/* Enhanced glow effect on hover */
 .edu .status-company:hover::before {
-  box-shadow: 0 0 60px rgba(0, 255, 255, 1); /* Enhanced glow on hover */
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.7); /* Brighter glow */
+  transform: scale(1.05); /* Slight expansion for emphasis */
 }
+
 
 .icon-link {
   display: inline-block;
@@ -901,4 +925,64 @@ div.output a, i {
   width: 30px; /* Adjust icon size */
   height: 30px;
   margin-right: 5px;
+}
+
+/* Main Footer Style */
+.contact-footer {
+    background-color: transparent;
+    color: #fff;
+    /* padding: 6px 1px; */
+    text-align: flex;
+    padding-left: 30px;
+    border-top: 2px solid #555;
+}
+
+/* Contact Content */
+.contact-content {
+    margin-bottom: 10px;
+}
+
+.contact-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Contact Information Links */
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.contact-link i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.contact-link:hover {
+    color: #1a73e8;
+}
+
+.contact-link span {
+    font-size: 16px;
+}
+
+/* Footer Style */
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.footer p {
+    margin: 0;
 }
